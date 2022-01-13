@@ -1,5 +1,5 @@
 <?php
-die('testing');
+die('here');
 use Illuminate\Contracts\Http\Kernel;
 use Illuminate\Http\Request;
 
