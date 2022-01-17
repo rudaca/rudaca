@@ -1,5 +1,5 @@
 <?php
-die('here');
+die('here'); 
 use Illuminate\Contracts\Http\Kernel;
 use Illuminate\Http\Request;
 
