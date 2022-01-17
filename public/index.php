@@ -1,16 +1,6 @@
 <?php
 use Illuminate\Contracts\Http\Kernel;
 use Illuminate\Http\Request;
-use Artisan;
-
-
-Artisan::call('cache:clear');
-
-    Artisan::call('view:clear');
-
-    Artisan::call('route:clear');
-
-    Artisan::call('config:clear');
 
 define('LARAVEL_START', microtime(true));
 
