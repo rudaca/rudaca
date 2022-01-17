@@ -17,6 +17,20 @@ Route::get('/', function () {
     return view('welcome');
 });
 
-Route::middleware(['auth:sanctum', 'verified'])->get('/dashboard', function () {
+Route::get('clear-cache', function() {
+
+    Artisan::call('cache:clear');
+
+    Artisan::call('view:clear');
+
+    Artisan::call('route:clear');
+
+    Artisan::call('config:clear');
+
+    return "Cache is cleared...";
+
+});
+
+/* Route::middleware(['auth:sanctum', 'verified'])->get('/dashboard', function () {
     return view('dashboard');
-})->name('dashboard');
+})->name('dashboard'); */
