@@ -1,4 +1,4 @@
-const bootstrap = require('bootstrap');
+require('./bootstrap');
 
 import Alpine from 'alpinejs';
 

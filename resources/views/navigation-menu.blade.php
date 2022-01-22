@@ -99,14 +99,6 @@
                             <x-jet-dropdown-link href="{{ route('profile.show') }}">
                                 {{ __('Profile') }}
                             </x-jet-dropdown-link>
-							
-							<x-jet-dropdown-link href="{{ url('upload') }}">
-                                {{ __('Upload') }}
-                            </x-jet-dropdown-link>
-							
-							<x-jet-dropdown-link href="{{ url('media') }}">
-                                {{ __('Media') }}
-                            </x-jet-dropdown-link>
 
                             @if (Laravel\Jetstream\Jetstream::hasApiFeatures())
                                 <x-jet-dropdown-link href="{{ route('api-tokens.index') }}">
