@@ -15,7 +15,8 @@ class CreateSessionsTable extends Migration
     {
         Schema::create('sessions', function (Blueprint $table) {
             $table->bigIncrements('session_id');
-            $table->string('id')->primary();
+            $table->string('id')->index();
+          //  $table->string('id')->primary();
            // $table->id();
             $table->foreignId('user_id')->nullable()->index();
             $table->string('ip_address', 45)->nullable();
