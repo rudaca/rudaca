@@ -19,9 +19,11 @@ Route::get('/', function () {
     return view('welcome');
 });
 
-Route::get('/upload',UploadFiles::class);
-Route::get('/media',Media::class);
-
 Route::middleware(['auth:sanctum', 'verified'])->get('/dashboard', function () {
     return view('dashboard');
 })->name('dashboard');
+
+Route::group(['middleware' => ['auth:sanctum', 'verified']], function() {
+	Route::get('/upload',UploadFiles::class);
+	Route::get('/media',Media::class);
+});
