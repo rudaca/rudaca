@@ -117,10 +117,10 @@
                             <div class="border-t border-gray-100"></div>
 
                             <!-- Authentication -->
-                            <form method="POST" action="{{ route('logout') }}">
+                            <form method="POST" action="/logout">
                                 @csrf
 
-                                <x-jet-dropdown-link href="{{ url('/logout') }}"
+                                <x-jet-dropdown-link href="/logout"
                                          onclick="event.preventDefault();
                                                 this.closest('form').submit();">
                                     {{ __('Log Out') }}
