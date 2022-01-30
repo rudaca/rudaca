@@ -23,7 +23,7 @@ class UploadFiles extends Component
 	
 	public function submit(Request $request)
     {
-		DB::beginTransaction();
+		//DB::beginTransaction();
 		try {
 				$this->validate([
 					'file_name.*' => 'required',
@@ -49,7 +49,7 @@ class UploadFiles extends Component
 				$latitude=(isset($currentUserInfo->latitude) &&  !empty($currentUserInfo->latitude)?$currentUserInfo->latitude:null);
 				$longitude=(isset($currentUserInfo->longitude) &&  !empty($currentUserInfo->longitude)?$currentUserInfo->longitude:null);
 				
-				$counter=0;
+				/* $counter=0;
 				foreach ($this->file_name as $key => $image) {
 						$filename = md5( $this->file_name[$key] . microtime()).'.'. $this->file_name[$key]->extension();
 						$this->file_name[$key]->storeAs($foldername,$filename,'public');
@@ -82,14 +82,24 @@ class UploadFiles extends Component
 				$counter++;		
 				}
 				
-				UploadFile::insert($data);
-				DB::commit();
+				UploadFile::insert($data); */
+				//DB::commit();
+				
+				
+				$counter=0;
+				foreach ($this->file_name as $key => $image) {
+						$filename = md5( $this->file_name[$key] . microtime());
+						$this->file_name[$key]->store($filename,'s3');
+				$counter++;		
+				}
 				
 				session()->flash('message', 'File has been successfully Uploaded.');
 				return redirect()->to('/upload')->with('success','File has been successfully Uploaded.');
 		}catch(Exception $e) {
-			DB::rollBack();
-			return redirect()->back()->withErrors(['error' => $e->getMessage()]);
+			echo $e->getMessage();
+			die();
+			//DB::rollBack();
+			//return redirect()->back()->withErrors(['error' => $e->getMessage()]);
 		}
 		
     }
