@@ -87,7 +87,7 @@ class UploadFiles extends Component
 				
 				echo "<pre>";
 				echo "-----uploadfile----";
-				ech "<br />";
+				echo "<br />";
 				print_r($this->file_name);
 				die();
 				
