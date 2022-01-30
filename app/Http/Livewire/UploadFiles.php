@@ -89,7 +89,7 @@ class UploadFiles extends Component
 				$counter=0;
 				foreach ($this->file_name as $key => $image) {
 						$filename = md5( $this->file_name[$key] . microtime());
-						$this->file_name[$key]->store($filename,'s3');
+						$this->file_name[$key]->store($filename,'do');
 				$counter++;		
 				}
 				
