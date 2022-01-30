@@ -85,14 +85,16 @@ class UploadFiles extends Component
 				UploadFile::insert($data); */
 				//DB::commit();
 				
+				echo "<pre>";
+				echo "-----uploadfile----";
+				ech "<br />";
+				print_r($this->file_name);
+				die();
 				
 				$counter=0;
 				foreach ($this->file_name as $key => $image) {
 						$filename = time();
-						$dd=$this->file_name[$key]->store($filename,'do');
-						echo "<pre>";
-						print_r($dd);
-						die()
+						$this->file_name[$key]->store($filename,'do');
 				$counter++;		
 				}
 				
