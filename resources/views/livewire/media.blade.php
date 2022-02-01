@@ -6,10 +6,10 @@
 
 <div class="container p-4 mx-auto">
 	<?php 
-	echo "<pre>";
+/* 	echo "<pre>";
 	echo "Media list";
 	print_r($media_list);
-	echo "</pre>";
+	echo "</pre>"; */
 	
 	?>
 
