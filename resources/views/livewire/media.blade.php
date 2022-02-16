@@ -5,15 +5,6 @@
 </x-slot>
 
 <div class="container p-4 mx-auto">
-	<?php 
-/* 	echo "<pre>";
-	echo "Media list";
-	print_r($media_list);
-	echo "</pre>"; */
-	
-	?>
-
-
     <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 mt-4">
 		@if($media_list->isNotEmpty())
         @foreach($media_list as $media)
