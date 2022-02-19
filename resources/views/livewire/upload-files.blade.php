@@ -1,6 +1,6 @@
     <x-slot name="header">
         <h2 class="font-semibold text-xl text-gray-800 leading-tight">
-            {{ __('Upload Multiple Photos/Vidoes') }}
+            {{ __('Upload Multiple Photos / Vidoes') }}
         </h2>
     </x-slot>
 	
@@ -32,7 +32,7 @@
 						  </label>
 						</div>
 						<div class="md:w-2/3">
-							<input type="file" class="form-control" id="exampleInputName" wire:model="file_name" multiple> 
+							<input type="file" class="form-control" id="exampleInputName" wire:model="file_name" multiple>
 							@error('file_name') <span class="text-danger">{{ $message }}</span> @enderror
 						</div>
 					  </div>
