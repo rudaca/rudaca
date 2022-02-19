@@ -54,7 +54,10 @@ class UploadFiles extends Component
 						$filename = md5( $this->file_name[$key] . microtime()).'.'. $this->file_name[$key]->extension();
 						//$this->file_name[$key]->storeAs($foldername,$filename,'public');
 						//$this->file_name[$key]->storeAs($foldername,$filename,'do');
-						$this->file_name[$key]->store('test-file','do');
+						$dd=$this->file_name[$key]->store('test-file','do');
+						echo "<pre>";
+						print_r($dd);
+						die();
 						$extension = $this->file_name[$key]->extension();
 						$mime_type = $this->file_name[$key]->getMimeType();
 						$filesize = $this->file_name[$key]->getSize();
@@ -88,7 +91,7 @@ class UploadFiles extends Component
 				//DB::commit();
 				
 				session()->flash('message', 'File has been successfully Uploaded.');
-				return redirect()->to('/upload')->with('success','File has been successfully Uploaded.');
+				//return redirect()->to('/upload')->with('success','File has been successfully Uploaded.');
 		}catch(Exception $e) {
 			DB::rollBack();
 			return redirect()->back()->withErrors(['error' => $e->getMessage()]);
