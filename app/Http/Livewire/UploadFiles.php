@@ -53,7 +53,7 @@ class UploadFiles extends Component
 				foreach ($this->file_name as $key => $image) {
 						$filename = md5( $this->file_name[$key] . microtime()).'.'. $this->file_name[$key]->extension();
 						//$this->file_name[$key]->storeAs($foldername,$filename,'public');
-						$this->file_name[$key]->storeAs($foldername,$filename,'do');
+						$this->file_name[$key]->storeAs($foldername,$filename,'do'); 
 						$extension = $this->file_name[$key]->extension();
 						$mime_type = $this->file_name[$key]->getMimeType();
 						$filesize = $this->file_name[$key]->getSize();
