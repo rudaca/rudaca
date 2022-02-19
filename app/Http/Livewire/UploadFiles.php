@@ -52,18 +52,18 @@ class UploadFiles extends Component
 				$counter=0;
 				foreach ($this->file_name as $key => $image) {
 						$filename = md5( $this->file_name[$key] . microtime()).'.'. $this->file_name[$key]->extension();
-						$this->file_name[$key]->storeAs($foldername,$filename,'public');
+						//$this->file_name[$key]->storeAs($foldername,$filename,'public');
 						$this->file_name[$key]->storeAs($foldername,$filename,'do');
 						$extension = $this->file_name[$key]->extension();
 						$mime_type = $this->file_name[$key]->getMimeType();
 						$filesize = $this->file_name[$key]->getSize();
-						list($height,$width)=getimagesize(storage_path("app/public/$foldername/$filename"));
+						//list($height,$width)=getimagesize(storage_path("app/public/$foldername/$filename"));
 						
 						$data[$counter]['file_name'] = $foldername.'/'.$filename;
 						$data[$counter]['extension'] = $extension;
 						$data[$counter]['mime_type'] = $mime_type;
-						$data[$counter]['height'] = $height;
-						$data[$counter]['width'] = $width;
+						//$data[$counter]['height'] = $height;
+						//$data[$counter]['width'] = $width;
 						$data[$counter]['filesize'] = $filesize;
 						$data[$counter]['device_info'] = $device_info;
 						$data[$counter]['ip_address'] = $ip_address;
@@ -83,7 +83,7 @@ class UploadFiles extends Component
 				$counter++;		
 				}
 				
-				UploadFile::insert($data);
+				//UploadFile::insert($data);
 				DB::commit();
 				
 				session()->flash('message', 'File has been successfully Uploaded.');
