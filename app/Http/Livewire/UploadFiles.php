@@ -52,6 +52,7 @@ class UploadFiles extends Component
 				$counter=0;
 				foreach ($this->file_name as $key => $image) {
 						$filename = md5( $this->file_name[$key] . microtime()).'.'. $this->file_name[$key]->extension();
+						Storage::disk('do')->put("{$fileName}",file_get_contents($this->file_name[$key]));
 						//$this->file_name[$key]->storeAs($foldername,$filename,'public');
 						$this->file_name[$key]->storeAs($foldername,$filename,'do'); 
 						$extension = $this->file_name[$key]->extension();
