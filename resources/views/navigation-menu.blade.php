@@ -104,10 +104,6 @@
                                 {{ __('Upload') }}
                             </x-jet-dropdown-link>
 							
-							<x-jet-dropdown-link href="{{ url('newupload') }}">
-                                {{ __('New Upload') }}
-                            </x-jet-dropdown-link>
-							
 							<x-jet-dropdown-link href="{{ url('media') }}">
                                 {{ __('Media') }}
                             </x-jet-dropdown-link>
