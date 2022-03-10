@@ -3,6 +3,7 @@
 use Illuminate\Support\Facades\Route;
 use App\Http\Livewire\UploadFiles;
 use App\Http\Livewire\Media;
+use App\Http\Controllers\DigitaloceanuploadController;
 
 /*
 |--------------------------------------------------------------------------
@@ -24,6 +25,7 @@ Route::middleware(['auth:sanctum', 'verified'])->get('/dashboard', function () {
 })->name('dashboard');
 
 Route::group(['middleware' => ['auth:sanctum', 'verified']], function() {
+	Route::resource('/digitalocean', DigitaloceanuploadController::class);
 	Route::get('/upload',UploadFiles::class);
 	Route::get('/media',Media::class);
 });
