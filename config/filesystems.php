@@ -60,8 +60,10 @@ return [
             'region' => env('DO_DEFAULT_REGION'),
             'bucket' => env('DO_BUCKET'),
             'url' => env('DO_URL'),
-            'endpoint' => env('DO_ENDPOINT'),
-            'use_path_style_endpoint' => env('DO_USE_PATH_STYLE_ENDPOINT', false),
+            //'endpoint' => env('DO_ENDPOINT'),
+            'endpoint' => 'https://nyc3.digitaloceanspaces.com',
+           // 'use_path_style_endpoint' => env('DO_USE_PATH_STYLE_ENDPOINT', false),
+            'use_path_style_endpoint' => true,
         ]
 
     ],
