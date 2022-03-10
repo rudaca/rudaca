@@ -31,7 +31,7 @@ class DigitaloceanuploadController extends Controller
 			$file=$request->file('image');
 			$filePath = time() . $file->getClientOriginalName();
 			$t = Storage::disk('do')->put($filePath, file_get_contents($file), 'public');
-			$imageName = Storage::disk('s3')->url($filePath);	
+			$imageName = Storage::disk('do')->url($filePath);	
 			echo "<pre>";
 			print_r($request->all());
 			print_r($request->file('image'));

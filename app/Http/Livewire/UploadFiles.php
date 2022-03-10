@@ -51,13 +51,14 @@ class UploadFiles extends Component
 				
 				$counter=0;
 				foreach ($this->file_name as $key => $image) {
-						$filename = md5( $this->file_name[$key] . microtime()).'.'. $this->file_name[$key]->extension();
-						//$this->file_name[$key]->storeAs($foldername,$filename,'public');
-						$this->file_name[$key]->storeAs('/',$filename,'do'); 
-						$extension = $this->file_name[$key]->extension();
-						$mime_type = $this->file_name[$key]->getMimeType();
-						$filesize = $this->file_name[$key]->getSize();
-						list($height,$width)=getimagesize(storage_path("app/public/$foldername/$filename"));
+						$file=$this->file_name[$key];
+						$filename = md5( $file->getClientOriginalName() . microtime()).'.'. $file->extension();
+						Storage::disk('do')->put($filename, file_get_contents($file), 'public');
+						$uploadFilePath = Storage::disk('do')->url($filename);
+						$extension = $file->extension();
+						$mime_type = $file->getMimeType();
+						$filesize = $file->getSize();
+						list($height,$width)=getimagesize($uploadFilePath);
 						
 						$data[$counter]['file_name'] = $foldername.'/'.$filename;
 						$data[$counter]['extension'] = $extension;
