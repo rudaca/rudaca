@@ -4,7 +4,6 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use Storage;
-use Illuminate\Support\Facades\DB;
 class DigitaloceanuploadController extends Controller
 {
     public function index()
@@ -14,9 +13,6 @@ class DigitaloceanuploadController extends Controller
 	
 	public function create()
     {
-		
-		DB::table('upload_files')->truncate();
-		
 		return view('digitalocean');  
     }
 	
