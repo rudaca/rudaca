@@ -21,35 +21,46 @@
 					  <p class="font-bold">Media alert</p>
 					  <p class="text-sm">Uploading Media Images...</p>
 					</div>
-				
-			
-				<div class="relative flex items-center justify-center min-h-screen bg-gray-1001 dark:bg-gray-9001 sm:items-center py-4 sm:pt-0">
-					<form class="w-full max-w-sm" wire:submit.prevent="submit" enctype="multipart/form-data">
-					  <div class="md:flex md:items-center mb-6">
-						<div class="md:w-1/3">
-						  <label class="block text-gray-500 font-bold md:text-right mb-1 md:mb-0 pr-4" for="inline-password">
-							Select File
-						  </label>
-						</div>
-						<div class="md:w-2/3">
-							<input type="file" class="form-control" id="exampleInputName" wire:model="file_name" multiple>
-							@error('file_name') <span class="text-danger">{{ $message }}</span> @enderror
-						</div>
-					  </div>
-					  <div class="md:flex md:items-center">
-						<div class="md:w-1/3"></div>
-						<div class="md:w-2/3">
-						  <button class="shadow bg-blue-500 hover:bg-blue-400 focus:shadow-outline focus:outline-none text-white font-bold py-2 px-4 rounded">
-							Upload
-						  </button>
-						</div>
-					  </div>
-					</form>
 					
-					<div wire:loading wire:target="latest_files">
-					Updating Post...
+					<div  x-data="{ isUploading: false, progress: 0 }"
+						x-on:livewire-upload-start="isUploading = true"
+						x-on:livewire-upload-finish="isUploading = false"
+						x-on:livewire-upload-error="isUploading = false"
+						x-on:livewire-upload-progress="progress = $event.detail.progress"
+					>
+						<div class="relative flex items-center justify-center min-h-screen-- bg-gray-1001 dark:bg-gray-9001 sm:items-center p-40">
+							<form class="w-full max-w-sm" wire:submit.prevent="submit" enctype="multipart/form-data">
+							  <div class="md:flex md:items-center mb-6">
+								<div class="md:w-1/3">
+								  <label class="block text-gray-500 font-bold md:text-right mb-1 md:mb-0 pr-4" for="inline-password">
+									Select File
+								  </label>
+								</div>
+								<div class="md:w-2/3">
+									<input type="file" class="form-control" id="exampleInputName" wire:model="file_name" multiple>
+									@error('file_name') <span class="text-danger">{{ $message }}</span> @enderror
+									
+									<div x-show="isUploading" class="min-w-full">
+										<progress max="100" x-bind:value="progress"></progress>
+									</div>
+									
+								</div>
+							  </div>
+							  <div class="md:flex md:items-center">
+								<div class="md:w-1/3"></div>
+								<div class="md:w-2/3">
+								  <button class="shadow bg-blue-500 hover:bg-blue-400 focus:shadow-outline focus:outline-none text-white font-bold py-2 px-4 rounded">
+									Upload
+								  </button>
+								</div>
+							  </div>
+							</form>
+							
+							<div wire:loading wire:target="latest_files">
+								Updating Post...
+							</div>
+						</div>
 					</div>
-            </div>
         </div>
     </div>
 </div>
