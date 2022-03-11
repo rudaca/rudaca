@@ -60,7 +60,7 @@ class UploadFiles extends Component
 						$mime_type = $file->getMimeType();
 						$filesize = $file->getSize();
 						list($height,$width)=getimagesize($uploadFilePath);
-						$data[$counter]['file_name'] = $foldername.'/'.$filename;
+						$data[$counter]['file_name'] = $filename;
 						$data[$counter]['extension'] = $extension;
 						$data[$counter]['mime_type'] = $mime_type;
 						$data[$counter]['height'] = $height;
