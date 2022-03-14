@@ -5,9 +5,9 @@
 </x-slot>
 
 @php 
-echo "<pre>";
-print_r($media_list->toArray());
-echo "</pre>";
+//echo "<pre>";
+//print_r($media_list->toArray());
+//echo "</pre>";
 @endphp
 
 
