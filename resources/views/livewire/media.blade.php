@@ -131,6 +131,13 @@
 							@endif
 						</span>
 					</p>
+					
+					<p class="clear-both mt-2 text-gray-800">
+						<h6 class="float-left h-6 w-30"><b>Upload By:</b></h6>
+						<span class="float-left">
+						{{auth()->user()->name}}
+						</span>
+					</p>
 				</a>
         @endforeach
 		@endif
