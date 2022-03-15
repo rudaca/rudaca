@@ -116,7 +116,7 @@
 					@endif
 					
 					<p class="clear-both mt-2 text-gray-800">
-						Filesize:
+						<h6 class="float-left h-6 w-6">Filesize:</h6>
 						<span class="float-left">
 							@if(is_object($media))
 								{{ number_format($media->filesize / 1048576,2) }}	
