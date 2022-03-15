@@ -116,12 +116,12 @@
 					@endif
 					
 					<p class="clear-both mt-2 text-gray-800">
-						<h6 class="float-left h-6 w-6">Filesize:</h6>
+						<h6 class="float-left h-6 w-30"><b>Filesize:</b></h6>
 						<span class="float-left">
 							@if(is_object($media))
-								{{ number_format($media->filesize / 1048576,2) }}	
+								{{ number_format($media->filesize / 1048576,2).' MB' }}	
 							@else
-								{{ number_format($media['filesize'] / 1048576,2) }}	
+								{{ number_format($media['filesize'] / 1048576,2).' MB' }}	
 							@endif
 						</span>
 					</p>
