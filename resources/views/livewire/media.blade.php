@@ -114,6 +114,17 @@
 						</span>
 					</p>
 					@endif
+					
+					<p class="clear-both mt-2 text-gray-800">
+						Filesize:
+						<span class="float-left">
+							@if(is_object($media))
+								{{ number_format($media->filesize / 1048576,2) }}	
+							@else
+								{{ number_format($media['filesize'] / 1048576,2) }}	
+							@endif
+						</span>
+					</p>
 				</a>
         @endforeach
 		@endif
