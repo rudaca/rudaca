@@ -38,7 +38,7 @@
 						@endif
 					</h2>
 
-					<p class="mt-2 text-gray-800">
+					<p class="clear-both mt-2 text-gray-800">
 							<svg xmlns="http://www.w3.org/2000/svg" class="float-left h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
 							  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z" />
 							</svg>
@@ -52,8 +52,8 @@
 							</span>
 					</p>
 					
-					<p class="mt-2 text-gray-800">
-						<svg version="1.1" id="Capa_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+					<p class="clear-both mt-2 text-gray-800">
+						<svg class="float-left h-6 w-6" version="1.1" id="Capa_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
 								 width="24" height="24" viewBox="0 0 466.583 466.582" style="enable-background:new 0 0 466.583 466.582;"
 								 xml:space="preserve">
 							<g>
@@ -93,14 +93,13 @@
 							<g>
 							</g>
 						</svg>
-
-							<span class="float-left">
+						<span class="float-left">
 							@if(is_object($media))
 								{{$media->country_name}}		
 							@else
 								{{$media['country_name']}}		
 							@endif
-							</span>
+						</span>
 					</p>
 				</a>
         @endforeach
