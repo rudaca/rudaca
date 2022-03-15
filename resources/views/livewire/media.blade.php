@@ -102,6 +102,7 @@
 						</span>
 					</p>
 					
+					@if((is_object($media) && strstr($media->mime_type,"image/")) || (isset($media['mime_type']) && strstr($media['mime_type'],"image/")))
 					<p class="clear-both mt-2 text-gray-800">
 						<svg class="float-left h-6 w-6" width="24" height="24" viewBox="0 0 48 48"  xmlns="http://www.w3.org/2000/svg"><path d="M38 24h-4v6h-6v4h10v-10zm-24-6h6v-4h-10v10h4v-6zm28-12h-36c-2.21 0-4 1.79-4 4v28c0 2.21 1.79 4 4 4h36c2.21 0 4-1.79 4-4v-28c0-2.21-1.79-4-4-4zm0 32.03h-36v-28.06h36v28.06z"/><path d="M0 0h48v48h-48z" fill="none"/></svg>
 						<span class="float-left">
@@ -112,6 +113,7 @@
 							@endif
 						</span>
 					</p>
+					@endif
 				</a>
         @endforeach
 		@endif
