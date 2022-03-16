@@ -42,38 +42,56 @@
 					  <section class="break-inside-avoid">
 						<ul class="list-inside pr-7">
 						   <li class="leading-normal text-black transition duration-100 ease-in text-gray-550 text-md hover:text-gray-700 print:">
-							  <span class="mr-2 text-lg font-semibold text-gray-700 leading-snugish">
+							<span class="mr-2 text-lg font-semibold text-gray-700 leading-snugish">
 								Created Date:
-							  </span>
-							  India
+							</span>
+								@if(is_object($media))
+									{{$media->created_at}}		
+								@else
+									{{$media['created_at']}}		
+								@endif
 						  </li>
 						  
 						  <li class="leading-normal text-black transition duration-100 ease-in text-gray-550 text-md hover:text-gray-700 print:">
 							  <span class="mr-2 text-lg font-semibold text-gray-700 leading-snugish">
 								Country:
 							  </span>
-							  India
+								@if(is_object($media))
+									{{$media->country_name}}		
+								@else
+									{{$media['country_name']}}		
+								@endif
 						  </li>
 						  
+						  @if((is_object($media) && strstr($media->mime_type,"image/")) || (isset($media['mime_type']) && strstr($media['mime_type'],"image/")))
 						   <li class="leading-normal text-black transition duration-100 ease-in text-gray-550 text-md hover:text-gray-700 print:">
 							  <span class="mr-2 text-lg font-semibold text-gray-700 leading-snugish">
 								Height*Width:
 							  </span>
-							  1200*799
+								@if(is_object($media))
+									{{$media->height}}*{{$media->width}}			
+								@else
+									{{$media['height']}}*{{$media['width']}}		
+								@endif
 						  </li>
+						  @endif
 						  
 						   <li class="leading-normal text-black transition duration-100 ease-in text-gray-550 text-md hover:text-gray-700 print:">
 							  <span class="mr-2 text-lg font-semibold text-gray-700 leading-snugish">
 								Filesize:
 							  </span>
-							  0.32 MB
+							  @if(is_object($media))
+								{{ number_format($media->filesize / 1048576,2).' MB' }}	
+								@else
+									{{ number_format($media['filesize'] / 1048576,2).' MB' }}	
+								@endif
 						  </li>
 						  
 						   <li class="leading-normal text-black transition duration-100 ease-in text-gray-550 text-md hover:text-gray-700 print:">
 							  <span class="mr-2 text-lg font-semibold text-gray-700 leading-snugish">
 								Upload By:
 							  </span>
-							  Rudaca
+							  {{auth()->user()->name}}
 						  </li>
 						</ul>
 					  </section>
