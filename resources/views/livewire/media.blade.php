@@ -15,7 +15,7 @@
     <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 mt-4">
 		@if($media_list->isNotEmpty())
         @foreach($media_list as $media)
-				<a href="#" class="block p-4 bg-white rounded shadow-sm hover:shadow overflow-hidden">
+				<a class="block p-4 bg-white rounded shadow-sm hover:shadow overflow-hidden">
 					<h2 class="truncate font-semibold text-lg text-gray-800">
 						@if(is_object($media))
 							@if(strstr($media->mime_type,"image/"))
