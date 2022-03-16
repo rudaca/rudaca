@@ -43,7 +43,7 @@
 						<ul class="list-inside pr-7">
 						   <li class="leading-normal text-black transition duration-100 ease-in text-gray-550 text-md hover:text-gray-700 print:">
 							<span class="mr-2 text-lg font-semibold text-gray-700 leading-snugish">
-								Created Date:
+								Created At:
 							</span>
 								@if(is_object($media))
 									{{$media->created_at}}		
