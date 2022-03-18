@@ -42,7 +42,6 @@ class Media extends Component
 	
 	public function delete($id){
 		$media=UploadFile::findOrFail($id);
-		$media->delete();
 		$exist=Storage::disk('do')->exists($media->file_name);
 		if($exist){
 			$delete_file=Storage::disk('do')->delete($media->file_name);
@@ -50,6 +49,7 @@ class Media extends Component
 				$media->delete();
 			}
 		}
-		$this->emit('render');
+		$this->mount();
+		$this->render();
 	}
 }
