@@ -51,8 +51,5 @@ class Media extends Component
 			}
 		}
 		$this->emit('render');
-		$this->mount();
-		$this->render();
-		$this->dispatchBrowserEvent('error',['message' => 'File deleted successfully !!']);
 	}
 }
