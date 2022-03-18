@@ -49,6 +49,6 @@ class Media extends Component
 				$media->delete();
 			}
 		}
-		$this->render();
+		$this->mount();
 	}
 }
