@@ -50,6 +50,6 @@ class Media extends Component
 			}
 		}
 		$list = UploadFile::where('user_id',Auth::user()->id)->latest()->paginate($this->perPage, ['*'], 'page', $this->pageNumber);
-		$this->media_list = [];
+		$this->media_list = $list->items();
 	}
 }
