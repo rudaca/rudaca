@@ -54,5 +54,6 @@ class Media extends Component
         $this->pageNumber += 1;
         $this->hasMorePages = $list->hasMorePages();
         $this->media_list->push(...$list->items());
+		$this->emit('render');
 	}
 }
