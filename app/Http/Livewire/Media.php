@@ -7,6 +7,7 @@ use App\Models\UploadFile;
 use Illuminate\Support\Facades\DB;
 use Auth;
 use Illuminate\Support\Collection;
+use Storage;
 class Media extends Component
 {
 	protected $listeners = [
@@ -37,4 +38,16 @@ class Media extends Component
     {
         return view('livewire.media');
     }
+	
+	public function delete($id){
+		$media=UploadFile::findOrFail($id);
+		$exist=Storage::disk('do')->exists($media->file_name);
+		echo "<pre>";
+		print_r($exist);
+		if(Storage::disk('do')->exists($media->file_name)){
+			$delete_file=Storage::disk('do')->delete($media->file_name);
+			print_r($delete_file);
+		}
+		die('here');
+	}
 }
