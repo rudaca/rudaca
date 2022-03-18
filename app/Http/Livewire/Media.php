@@ -11,7 +11,8 @@ use Storage;
 class Media extends Component
 {
 	protected $listeners = [
-        'load-more' => 'loadMore'
+        'load-more' => 'loadMore',
+		'render' => '$refresh'
     ];
 	public $media_types = [];
 	public $perPage = 4;
@@ -41,13 +42,14 @@ class Media extends Component
 	
 	public function delete($id){
 		$media=UploadFile::findOrFail($id);
+		$media->delete();
 		$exist=Storage::disk('do')->exists($media->file_name);
-		echo "<pre>";
-		print_r($exist);
-		if(Storage::disk('do')->exists($media->file_name)){
+		if($exist){
 			$delete_file=Storage::disk('do')->delete($media->file_name);
-			print_r($delete_file);
+			if($delete_file){
+				$media->delete();
+			}
 		}
-		die('here');
+		$this->emit('render');
 	}
 }
