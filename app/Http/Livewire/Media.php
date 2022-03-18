@@ -49,11 +49,7 @@ class Media extends Component
 				$media->delete();
 			}
 		}
-		
 		$list = UploadFile::where('user_id',Auth::user()->id)->latest()->paginate($this->perPage, ['*'], 'page', $this->pageNumber);
-        $this->pageNumber += 1;
-        $this->hasMorePages = $list->hasMorePages();
-        $this->media_list->push(...$list->items());
-		$this->emit('render');
+		$this->media_list = [];
 	}
 }
