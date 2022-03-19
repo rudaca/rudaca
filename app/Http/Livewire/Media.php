@@ -49,6 +49,9 @@ class Media extends Component
 				$media->delete();
 			}
 		}
-		return redirect()->to('/media');
+		//return redirect()->to('/media');
+		$this->ambiente='';
+		$this->page=1;
+		$this->perPage='5';
 	}
 }
