@@ -87,7 +87,7 @@ class UploadFiles extends Component
 				UploadFile::insert($data);
 				DB::commit();
 				
-				session()->flash('message', 'File has been successfully Uploaded.');
+				session()->flash('message_success', 'File has been successfully Uploaded.');
 				return redirect()->to('/upload')->with('success','File has been successfully Uploaded.');
 		}catch(Exception $e) {
 			DB::rollBack();
