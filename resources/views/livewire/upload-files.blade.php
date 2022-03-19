@@ -22,6 +22,10 @@
 					  <p class="text-sm">Uploading Media Images...</p>
 					</div>
 					
+					<div wire:loading wire:target="submit" class="bg-blue-100 border-t border-b border-blue-500 text-blue-700 px-4 py-3" role="alert">
+					  <p class="font-bold">Selected files are uploading to server please wait...</p>
+					</div>
+					
 					<div  x-data="{ isUploading: false, progress: 0 }"
 						x-on:livewire-upload-start="isUploading = true"
 						x-on:livewire-upload-finish="isUploading = false"
@@ -50,15 +54,12 @@
 								<div class="md:w-1/3"></div>
 								<div class="md:w-2/3">
 								  <button wire:loading.class="bg-gray-500 cursor-default" wire:loading.class.remove="shadow bg-blue-500 hover:bg-blue-400"  wire:loading.attr="disabled" class="shadow bg-blue-500 hover:bg-blue-400 focus:shadow-outline focus:outline-none text-white font-bold py-2 px-4 rounded">
+								  <span wire:loading wire:target="submit" class="float-left pr-2"><img src="{{ asset('images/loader-gray.gif') }}" /></span>
 									Upload
 								  </button>
 								</div>
 							  </div>
 							</form>
-							
-							<div wire:loading wire:target="latest_files">
-								Updating Post...
-							</div>
 						</div>
 					</div>
         </div>
