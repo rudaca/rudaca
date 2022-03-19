@@ -35,6 +35,9 @@
 
             <!-- Page Content -->
             <main>
+				@include('alerts.error')
+				@include('alerts.success')
+				@include('alerts.warning')
                 {{ $slot }}
             </main>
         </div>
