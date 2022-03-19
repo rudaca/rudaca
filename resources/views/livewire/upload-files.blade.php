@@ -24,7 +24,7 @@
 					
 					<div wire:loading wire:target="submit" class="min-w-full bg-blue-100 border-t border-b border-blue-500 text-blue-700 px-4 py-3" role="alert">
 					  <p class="font-bold">Media alert</p>	
-					  <p class="font-bold">Selected files are uploading to server please wait...</p>
+					  <p class="text-sm">Selected files are uploading to server please wait...</p>
 					</div>
 					
 					<div  x-data="{ isUploading: false, progress: 0 }"
