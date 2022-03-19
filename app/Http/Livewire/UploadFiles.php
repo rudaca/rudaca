@@ -91,6 +91,7 @@ class UploadFiles extends Component
 				return redirect()->to('/upload')->with('success','File has been successfully Uploaded.');
 		}catch(Exception $e) {
 			DB::rollBack();
+			session()->flash('message_error',$e->getMessage());
 			return redirect()->back()->withErrors(['error' => $e->getMessage()]);
 		}
 		
