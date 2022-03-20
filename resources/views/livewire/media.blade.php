@@ -28,7 +28,7 @@
 					<h2 class="truncate font-semibold text-lg text-gray-800">
 						@if(is_object($media))
 							@if(strstr($media->mime_type,"image/"))
-								<img class="h-43" src="{{Storage::url($media->file_name)}}" alt="img" />
+								<img class="h-44" src="{{Storage::url($media->file_name)}}" alt="img" />
 							@elseif(strstr($media->mime_type,"video/"))
 								<video class="mb-6" width="320" height="240" controls>
 								<source src="{{Storage::url($media->file_name)}}" type="video/mp4">
@@ -37,7 +37,7 @@
 							@endif		
 						@else
 							@if(strstr($media['mime_type'],"image/"))
-								<img class="h-43" src="{{Storage::url($media['file_name'])}}" alt="img" />
+								<img class="h-44" src="{{Storage::url($media['file_name'])}}" alt="img" />
 							@elseif(strstr($media['mime_type'],"video/"))
 								<video class="mb-6" width="320" height="240" controls>
 								<source src="{{Storage::url($media['file_name'])}}" type="video/mp4">
