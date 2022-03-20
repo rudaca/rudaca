@@ -72,20 +72,14 @@
 								@endif
 						  </li>
 						  
-						  @if((is_object($media) && strstr($media->mime_type,"image/")) || (isset($media['mime_type']) && strstr($media['mime_type'],"image/")))
-						   <li class="leading-normal text-black transition duration-100 ease-in text-gray-550 text-md hover:text-gray-700 print:">
+						  <li class="leading-normal text-black transition duration-100 ease-in text-gray-550 text-md hover:text-gray-700 print:">
 							  <span class="mr-2 text-base font-semibold text-gray-700 leading-snugish">
-								Height*Width:
+								Upload By:
 							  </span>
-								@if(is_object($media))
-									{{$media->height}}*{{$media->width}}			
-								@else
-									{{$media['height']}}*{{$media['width']}}		
-								@endif
+							  {{auth()->user()->name}}
 						  </li>
-						  @endif
 						  
-						   <li class="leading-normal text-black transition duration-100 ease-in text-gray-550 text-md hover:text-gray-700 print:">
+						  <li class="leading-normal text-black transition duration-100 ease-in text-gray-550 text-md hover:text-gray-700 print:">
 							  <span class="mr-2 text-base font-semibold text-gray-700 leading-snugish">
 								Filesize:
 							  </span>
@@ -96,12 +90,23 @@
 								@endif
 						  </li>
 						  
+						   @if((is_object($media) && strstr($media->mime_type,"image/")) || (isset($media['mime_type']) && strstr($media['mime_type'],"image/")))
 						   <li class="leading-normal text-black transition duration-100 ease-in text-gray-550 text-md hover:text-gray-700 print:">
 							  <span class="mr-2 text-base font-semibold text-gray-700 leading-snugish">
-								Upload By:
+								Dimension:
 							  </span>
-							  {{auth()->user()->name}}
+								@if(is_object($media))
+									{{$media->height}}*{{$media->width}}			
+								@else
+									{{$media['height']}}*{{$media['width']}}		
+								@endif
 						  </li>
+						  @else
+						  <li class="leading-normal text-black transition duration-100 ease-in text-gray-550 text-md hover:text-gray-700 print:">
+							  <span class="mr-2 text-base font-semibold text-gray-700 leading-snugish">
+							  </span>
+						  </li>  
+						  @endif
 						</ul>
 					  </section>
 					</div>
