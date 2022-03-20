@@ -39,7 +39,7 @@
 							@if(strstr($media['mime_type'],"image/"))
 								<img src="{{Storage::url($media['file_name'])}}" alt="img" />
 							@elseif(strstr($media['mime_type'],"video/"))
-								<video width="320" height="260" controls>
+								<video class="mb-6" width="320" height="240" controls>
 								<source src="{{Storage::url($media['file_name'])}}" type="video/mp4">
 								Your browser does not support the video tag.
 								</video>
