@@ -74,6 +74,17 @@
 						  
 						  <li class="leading-normal text-black transition duration-100 ease-in text-gray-550 text-md hover:text-gray-700 print:">
 							  <span class="mr-2 text-base font-semibold text-gray-700 leading-snugish">
+								City:
+							  </span>
+								@if(is_object($media))
+									{{$media->city_name}}		
+								@else
+									{{$media['city_name']}}		
+								@endif
+						  </li>
+						  
+						  <li class="leading-normal text-black transition duration-100 ease-in text-gray-550 text-md hover:text-gray-700 print:">
+							  <span class="mr-2 text-base font-semibold text-gray-700 leading-snugish">
 								Upload By:
 							  </span>
 							  {{auth()->user()->name}}
