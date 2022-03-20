@@ -49,9 +49,9 @@
 
 					<div class="break-inside-avoid">
 					  <section class="break-inside-avoid">
-						<ul class="list-inside pr-7">
+						<ul class="list-inside pr-7 text-sm">
 						   <li class="leading-normal text-black transition duration-100 ease-in text-gray-550 text-md hover:text-gray-700 print:">
-							<span class="mr-2 text-lg font-semibold text-gray-700 leading-snugish">
+							<span class="mr-2 text-base font-semibold text-gray-700 leading-snugish">
 								Created At:
 							</span>
 								@if(is_object($media))
@@ -62,7 +62,7 @@
 						  </li>
 						  
 						  <li class="leading-normal text-black transition duration-100 ease-in text-gray-550 text-md hover:text-gray-700 print:">
-							  <span class="mr-2 text-lg font-semibold text-gray-700 leading-snugish">
+							  <span class="mr-2 text-base font-semibold text-gray-700 leading-snugish">
 								Country:
 							  </span>
 								@if(is_object($media))
@@ -74,7 +74,7 @@
 						  
 						  @if((is_object($media) && strstr($media->mime_type,"image/")) || (isset($media['mime_type']) && strstr($media['mime_type'],"image/")))
 						   <li class="leading-normal text-black transition duration-100 ease-in text-gray-550 text-md hover:text-gray-700 print:">
-							  <span class="mr-2 text-lg font-semibold text-gray-700 leading-snugish">
+							  <span class="mr-2 text-base font-semibold text-gray-700 leading-snugish">
 								Height*Width:
 							  </span>
 								@if(is_object($media))
@@ -86,7 +86,7 @@
 						  @endif
 						  
 						   <li class="leading-normal text-black transition duration-100 ease-in text-gray-550 text-md hover:text-gray-700 print:">
-							  <span class="mr-2 text-lg font-semibold text-gray-700 leading-snugish">
+							  <span class="mr-2 text-base font-semibold text-gray-700 leading-snugish">
 								Filesize:
 							  </span>
 							  @if(is_object($media))
@@ -97,7 +97,7 @@
 						  </li>
 						  
 						   <li class="leading-normal text-black transition duration-100 ease-in text-gray-550 text-md hover:text-gray-700 print:">
-							  <span class="mr-2 text-lg font-semibold text-gray-700 leading-snugish">
+							  <span class="mr-2 text-base font-semibold text-gray-700 leading-snugish">
 								Upload By:
 							  </span>
 							  {{auth()->user()->name}}
