@@ -85,6 +85,17 @@
 						  
 						  <li class="leading-normal text-black transition duration-100 ease-in text-gray-550 text-md hover:text-gray-700 print:">
 							  <span class="mr-2 text-base font-semibold text-gray-700 leading-snugish">
+								Region:
+							  </span>
+								@if(is_object($media))
+									{{$media->region_name}}		
+								@else
+									{{$media['region_name']}}		
+								@endif
+						  </li>
+						  
+						  <li class="leading-normal text-black transition duration-100 ease-in text-gray-550 text-md hover:text-gray-700 print:">
+							  <span class="mr-2 text-base font-semibold text-gray-700 leading-snugish">
 								Device:
 							  </span>
 								@if(is_object($media))
