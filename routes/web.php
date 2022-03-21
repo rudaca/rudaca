@@ -26,6 +26,6 @@ Route::middleware(['auth:sanctum', 'verified'])->get('/dashboard', function () {
 
 Route::group(['middleware' => ['auth:sanctum', 'verified']], function() {
 	Route::resource('/digitalocean', DigitaloceanuploadController::class);
-	Route::get('/upload',UploadFiles::class);
-	Route::get('/media',Media::class);
+	Route::get('/upload',UploadFiles::class)->name('upload');
+	Route::get('/media',Media::class)->name('media');
 });
