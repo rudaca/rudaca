@@ -4,10 +4,8 @@
         </h2>
     </x-slot>
 	
-	
-	
-	<div class="container p-4 mx-auto">
-    <div class="py-12">
+<div class="container mx-auto">
+    <div class="w-full sm:w-1/1 md:w-1/1 xl:w-1/1 pt-12">
         <div class="max-w-7xl mx-auto sm:px-6 lg:px-8">
             <div class="bg-white overflow-hidden shadow-xl sm:rounded-lg">
 				@if (session()->has('message_success'))
@@ -65,4 +63,5 @@
 					</div>
         </div>
     </div>
+</div>
 </div>
