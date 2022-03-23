@@ -10,6 +10,7 @@ use Storage;
 use Stevebauman\Location\Facades\Location;
 use Illuminate\Support\Facades\DB;
 use Auth;
+use Illuminate\Support\Facades\App;
 class UploadFiles extends Component
 {
 	use WithFileUploads;
@@ -30,8 +31,19 @@ class UploadFiles extends Component
 				]);
 				
 				$data = [];
+				$upload_directory='';
+				$main_upload_folder_do='development';
+				$upload_profile_folder_do=Auth::user()->id;
 				
-				$foldername='upload_files';
+				if(App::environment('production')){
+					$main_upload_folder_do='development';
+					$upload_profile_folder_do=Auth::user()->id;
+					$upload_directory=$main_upload_folder_do.'/'.$upload_profile_folder_do.'/';
+				}else{
+					$main_upload_folder_do='development';
+					$upload_profile_folder_do=Auth::user()->id;
+					$upload_directory=$main_upload_folder_do.'/'.$upload_profile_folder_do.'/';		
+				}
 				
 				$device_info = $request->header('User-Agent');
 				$ip_address = $request->getClientIp();
@@ -52,7 +64,7 @@ class UploadFiles extends Component
 				$counter=0;
 				foreach ($this->file_name as $key => $image) {
 						$file=$this->file_name[$key];
-						$filename = md5( $file->getClientOriginalName() . microtime()).'.'. $file->extension();
+						$filename = $upload_directory.md5( $file->getClientOriginalName() . microtime()).'.'. $file->extension();
 						$fileTempPath=$file->getRealPath();
 						Storage::disk('do')->put($filename, file_get_contents($fileTempPath), 'public');
 						$uploadFilePath = Storage::disk('do')->url($filename);
