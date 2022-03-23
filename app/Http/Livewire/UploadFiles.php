@@ -36,7 +36,7 @@ class UploadFiles extends Component
 				$upload_profile_folder_do=Auth::user()->id;
 				
 				if(App::environment('production')){
-					$main_upload_folder_do='development';
+					$main_upload_folder_do='production';
 					$upload_profile_folder_do=Auth::user()->id;
 					$upload_directory=$main_upload_folder_do.'/'.$upload_profile_folder_do.'/';
 				}else{
