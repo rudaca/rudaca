@@ -43,7 +43,7 @@
           <h2 class="mt-2 mb-2  font-bold">Purus Ullamcorper Inceptos Nibh</h2>
           <p class="text-sm">Cras justo odio, dapibus ac facilisis in, egestas eget quam. Donec ullamcorper nulla non metus auctor fringilla.</p>
         </div>
-        <div class="p-4 border-t border-b text-xs text-gray-700">
+        <div class="p-4 border-t border-b text-xs text-gray-700" style="display:none;">
           <span class="flex items-center mb-1">
             <svg class="h-4 w-4 mr-2 text-gray-900"  width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">  <path stroke="none" d="M0 0h24v24H0z"/>  <circle cx="12" cy="12" r="9" />  <polyline points="12 7 12 12 15 15" /></svg>
 			@if(is_object($media))
