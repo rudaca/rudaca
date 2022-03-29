@@ -21,10 +21,10 @@
         <div class="relative pb-48 overflow-hidden">
 		  @if(is_object($media))
 							@if(strstr($media->mime_type,"image/"))
-							<img class="absolute inset-0 h-full w-full object-cover" src="{{Storage::url($media->file_name)}}" alt="">
+							<img class="absolute inset-0 h-full w-full object-cover" src="{{url('https://rudacadev.nyc3.digitaloceanspaces.com/'.$media->file_name)}}" alt="">
 							@elseif(strstr($media->mime_type,"video/"))
 								<video class="absolute inset-0 h-full w-full object-cover" width="320" height="240" controls>
-								<source src="{{Storage::url($media->file_name)}}" type="video/mp4">
+								<source src="{{url('https://rudacadev.nyc3.digitaloceanspaces.com/'.$media->file_name)}}" type="video/mp4">
 								Your browser does not support the video tag.
 								</video>
 							@endif		

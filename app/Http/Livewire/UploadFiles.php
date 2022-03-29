@@ -46,6 +46,15 @@ class UploadFiles extends Component
 				}
 				
 				$device_info = $request->header('User-Agent');
+				$device_taken = NULL;
+				$device_info_pos1 = strpos($device_info, '(')+1;
+				$device_info_pos2 = strpos($device_info, ')')-$device_info_pos1;
+				$device_info_part = substr($device_info, $device_info_pos1, $device_info_pos2);
+				$device_info_parts_array = explode(" ", $device_info_part);
+				if(isset($device_info_parts_array[0]) && isset($device_info_parts_array[1]) && isset($device_info_parts_array[2]) && isset($device_info_parts_array[3]) && isset($device_info_parts_array[4])){
+					$device_taken=$device_info_parts_array[0].' '.$device_info_parts_array[1].' '.$device_info_parts_array[2].' '.$device_info_parts_array[3].' '.$device_info_parts_array[4];
+				}
+				
 				$ip_address = $request->getClientIp();
 				$location = date('Y-m-d H:i:s');
 				$year = date('Y');
@@ -64,6 +73,7 @@ class UploadFiles extends Component
 				$counter=0;
 				foreach ($this->file_name as $key => $image) {
 						$file=$this->file_name[$key];
+						$target_upload_filename = $file->getClientOriginalName();
 						$filename = $upload_directory.md5( $file->getClientOriginalName() . microtime()).'.'. $file->extension();
 						$fileTempPath=$file->getRealPath();
 						Storage::disk('do')->put($filename, file_get_contents($fileTempPath), 'public');
@@ -92,6 +102,9 @@ class UploadFiles extends Component
 						$data[$counter]['longitude'] = $longitude; 
 						$data[$counter]['created_at'] = $created_at; 
 						$data[$counter]['user_id'] = Auth::user()->id;
+						$data[$counter]['target_upload_filename'] = $target_upload_filename;
+						$data[$counter]['date_taken_from_picture'] = $created_at;
+						$data[$counter]['device_taken'] = $device_taken;
 						
 				$counter++;		
 				}

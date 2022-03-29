@@ -28,5 +28,5 @@ class UploadFile extends Model
      *
      * @var array
      */
-    protected $fillable = ['file_name','extension','mime_type','height','width','filesize','device_info','ip_address','country_name','country_code','region_code','region_name','city_name','zip_code','latitude','longitude','year'];
+    protected $fillable = ['file_name','extension','mime_type','height','width','filesize','device_info','ip_address','country_name','country_code','region_code','region_name','city_name','zip_code','latitude','longitude','year','target_upload_filename','date_taken_from_picture','device_taken'];
 }
