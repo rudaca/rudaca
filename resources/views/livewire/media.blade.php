@@ -3,12 +3,7 @@
             {{ __('Media') }}
         </h2>
 </x-slot>
-<?php 
-echo "<pre>";
-print_r($media_list->toArray());
-echo "</pre>";
 
-?>
 <div class="container mx-auto">
     <div class="flex flex-wrap -mx-4">
 	@if($media_list->isNotEmpty())
