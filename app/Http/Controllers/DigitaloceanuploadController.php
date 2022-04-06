@@ -4,10 +4,22 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use Storage;
+use App\Models\UploadFile;
+use App\Models\User;
 class DigitaloceanuploadController extends Controller
 {
     public function index()
     {
+		
+		$listUser = User::get();
+		$list = UploadFile::get();
+		echo "<pre>";
+		print_r($listUser->toArray());
+		echo "-----------------------------------";
+		print_r($list->toArray());
+		die();
+		
+		
 		return view('digitalocean');  
     }
 	
