@@ -84,6 +84,9 @@
         Toast.fire({
             icon:type,
             title:message
-        })
+        }).then((result) => {
+		  // Reload the Page
+		  location.reload(true);
+		});
     })
 </script>
