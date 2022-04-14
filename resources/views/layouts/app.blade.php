@@ -45,11 +45,5 @@
         @stack('modals')
 
         @livewireScripts
-		<script type="text/javascript">
-		$(function(){
-			var timeout = 3000; // in miliseconds (3*1000)
-			$('.flash-alert').delay(timeout).fadeOut(300);
-		});	
-		</script>
     </body>
 </html>
