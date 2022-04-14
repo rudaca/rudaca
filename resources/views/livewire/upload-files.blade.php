@@ -9,7 +9,7 @@
         <div class="max-w-7xl mx-auto sm:px-6 lg:px-8"> 
             <div class="bg-white overflow-hidden shadow-xl sm:rounded-lg">
 				@if (session()->has('message_success'))
-					<div class=" min-w-full bg-blue-100 border-t border-b border-blue-500 text-blue-700 px-4 py-3" role="alert">
+					<div wire:loading.delay.short class=" min-w-full bg-blue-100 border-t border-b border-blue-500 text-blue-700 px-4 py-3" role="alert">
 					  <p class="font-bold">Success</p>
 					  <p class="text-sm">{{ session('message_success') }}</p>
 					</div>
