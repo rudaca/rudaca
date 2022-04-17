@@ -38,6 +38,7 @@
 				@include('alerts.error')
 				@include('alerts.success')
 				@include('alerts.warning')
+				@yield('content')
                 {{ $slot }}
             </main>
         </div>

@@ -1,9 +1,10 @@
-    <x-slot name="header">
+<x-slot name="header">
         <h2 class="font-semibold text-xl text-gray-800 leading-tight">
             {{ __('Upload Multiple Photos / Vidoes') }}
         </h2>
-    </x-slot>
-	
+</x-slot>
+
+@section('content')	
 <div class="container mx-auto">
     <div class="w-full sm:w-1/1 md:w-1/1 xl:w-1/1 pt-12">
         <div class="max-w-7xl mx-auto sm:px-6 lg:px-8"> 
@@ -90,3 +91,4 @@
 		});
     })
 </script>
+@endsection	
