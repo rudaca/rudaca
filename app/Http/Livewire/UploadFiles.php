@@ -24,11 +24,21 @@ class UploadFiles extends Component
 	
 	public function submit(Request $request)
     {
-		DB::beginTransaction();
 		try {
 				$this->validate([
-					'file_name.*' => 'required',
+					'file_name.*' => 'array|file',
 				]);
+				
+				if(empty($this->file_name)){
+					$this->dispatchBrowserEvent('alert',[
+						'type'=>'success',
+						'message'=>"Select file is required"
+					]);
+					session()->flash('message_error','Select file is required.');
+					return redirect()->to('/upload');
+				}
+				
+				DB::beginTransaction();
 				
 				$data = [];
 				$upload_directory='';
