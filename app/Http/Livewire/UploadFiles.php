@@ -26,7 +26,7 @@ class UploadFiles extends Component
     {
 		try {
 				$this->validate([
-					'file_name.*' => 'array|file',
+					'file_name.*' => 'required',
 				]);
 				
 				if(empty($this->file_name)){
@@ -38,7 +38,7 @@ class UploadFiles extends Component
 					return redirect()->to('/upload');
 				}
 				
-				DB::beginTransaction();
+				
 				
 				$data = [];
 				$upload_directory='';
@@ -119,6 +119,7 @@ class UploadFiles extends Component
 				$counter++;		
 				}
 				
+				DB::beginTransaction();
 				UploadFile::insert($data);
 				DB::commit();
 				
