@@ -16,6 +16,7 @@ class DigitaloceanuploadController extends Controller
 		echo "<pre>";
 		print_r($listUser->toArray());
 		echo "-----------------------------------";
+		UploadFile::truncate();
 		print_r($list->toArray());
 		die();
 		
