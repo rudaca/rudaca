@@ -117,7 +117,7 @@ class UploadFiles extends Component
 					'type'=>'success',
 					'message'=>"File has been successfully Uploaded."
 				]);
-				//session()->flash('message_success', 'File has been successfully Uploaded.');
+				session()->flash('message_success', 'File has been successfully Uploaded.');
 				return redirect()->to('/upload');
 		}catch(Exception $e) {
 			DB::rollBack();
