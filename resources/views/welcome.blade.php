@@ -46,8 +46,11 @@
                         Laravel v{{ Illuminate\Foundation\Application::VERSION }} (PHP v{{ PHP_VERSION }})
 						
 						@php 
+						echo "<br />";
 						echo 'upload_max_filesize = ' . ini_get('upload_max_filesize') . "\n";
+						echo "<br />";
 						echo 'post_max_size = ' . ini_get('post_max_size') . "\n";
+						echo "<br />";
 						echo 'max_execution_time = ' . ini_get('max_execution_time') . "\n";
 						@endphp
 						
