@@ -44,6 +44,13 @@
                 <div class="flex justify-center mt-4 sm:items-center sm:justify-between">
                     <div class="ml-4 text-center text-sm text-gray-500 sm:text-right sm:ml-0">
                         Laravel v{{ Illuminate\Foundation\Application::VERSION }} (PHP v{{ PHP_VERSION }})
+						
+						@php 
+						echo 'upload_max_filesize = ' . ini_get('upload_max_filesize') . "\n";
+						echo 'post_max_size = ' . ini_get('post_max_size') . "\n";
+						echo 'max_execution_time = ' . ini_get('max_execution_time') . "\n";
+						@endphp
+						
                     </div>
                 </div>
             </div>
