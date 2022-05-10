@@ -10,13 +10,14 @@ class DigitaloceanuploadController extends Controller
 {
     public function index()
     {
-		
-		$listUser = User::get();
-		$list = UploadFile::get();
-		echo "<pre>";
-		print_r($listUser->toArray());
-		echo "-----------------------------------";
-		print_r($list->toArray());
+		echo phpinfo();
+		die();
+		//$listUser = User::get();
+		//$list = UploadFile::get();
+		//echo "<pre>";
+		//print_r($listUser->toArray());
+		////echo "-----------------------------------";
+		//print_r($list->toArray());
 		die();
 		
 		
@@ -42,12 +43,12 @@ class DigitaloceanuploadController extends Controller
 		if ($request->hasFile('image')) {
 			$file=$request->file('image');
 			$filePath = time() . $file->getClientOriginalName();
-			$t = Storage::disk('do')->put($filePath, file_get_contents($file), 'public');
-			$imageName = Storage::disk('do')->url($filePath);	
+			//$t = Storage::disk('do')->put($filePath, file_get_contents($file), 'public');
+			//$imageName = Storage::disk('do')->url($filePath);	
 			echo "<pre>";
 			print_r($request->all());
 			print_r($request->file('image'));
-			print_r($imageName);
+			//print_r($imageName);
 			die('here');
 		}	
 		die('here1');
