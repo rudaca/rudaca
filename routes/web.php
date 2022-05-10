@@ -20,12 +20,14 @@ Route::get('/', function () {
     return view('welcome');
 });
 
+Route::resource('/digitalocean', DigitaloceanuploadController::class);
+
 Route::middleware(['auth:sanctum', 'verified'])->get('/dashboard', function () {
     return view('dashboard');
 })->name('dashboard');
 
 Route::group(['middleware' => ['auth:sanctum', 'verified']], function() {
-	Route::resource('/digitalocean', DigitaloceanuploadController::class);
+	
 	Route::get('/upload',UploadFiles::class)->name('upload');
 	Route::get('/media',Media::class)->name('media');
 });
