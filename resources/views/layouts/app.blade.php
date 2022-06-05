@@ -67,7 +67,14 @@
 				  // Reload the Page
 				  location.reload(true);
 				});
-			})
+			});
+			
+			document.getElementById("exampleInputName").addEventListener("change", function() {
+				if(this.files.length > 20){
+					this.value=null;
+					alert('Maximum number of allowable file uploads has been exceeded.  Only 20 files are allowed at one time');
+				}
+			});
 		</script>
         @livewireScripts
     </body>
