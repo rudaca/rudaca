@@ -1,6 +1,6 @@
 <?php
 return [
     'temporary_file_upload' => [
-        'disk' => 'public',
+        'disk' => 'do',
     ],
 ];
