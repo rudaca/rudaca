@@ -25,9 +25,9 @@ class UploadFiles extends Component
 	public function submit(Request $request)
     {
 		try {
-				//$this->validate([
-					//'file_name.*' => 'required',
-				//]);
+				$this->validate([
+					'file_name.*' => 'required',
+				]);
 				
 				if(empty($this->file_name)){
 					$this->dispatchBrowserEvent('alert',[
