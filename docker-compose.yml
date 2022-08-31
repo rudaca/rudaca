@@ -72,7 +72,6 @@ services:
             test: ["CMD", "wget", "--no-verbose", "--spider",  "http://localhost:7700/health"]
             retries: 3
             timeout: 5s
-
     mailhog:
         image: 'mailhog/mailhog:latest'
         ports:
