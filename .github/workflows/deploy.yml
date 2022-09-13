@@ -1,0 +1,24 @@
+name: build and deploy
+
+# Controls when the workflow will run
+on:
+  # Triggers the workflow on push or pull request events but only for the "development" branch
+  push:
+    branches: [ "development" ]
+ # pull_request:
+ #   branches: [ "development" ]
+
+  # Allows you to run this workflow manually from the Actions tab
+  workflow_dispatch:
+
+# A workflow run is made up of one or more jobs that can run sequentially or in parallel
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    steps:
+      - name: DigitalOcean App Platform deployment
+        uses: digitalocean/app_action@main
+        with:
+          app_name: my_DO_app
+          token: ${{ secrets.DIGITALOCEAN_ACCESS_TOKEN }}
+ 
