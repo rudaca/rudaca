@@ -11,10 +11,9 @@
 - Source code control: GitHub
 - Reporting/Dashboard: koolreport
 - Laravel jetstream.laravel.com
-- Potential Code Generator: https://crestapps.com/laravel-code-generator/
 - Permissions, roles and users: https://spatie.be/docs/laravel-permission/v5/introduction
   -- see video https://www.youtube.com/watch?v=NiQSNjWKLfU
-- LogView - to read logging access /log-viewer
+- arcanedev/log-viewer LogView - to read logging access /log-viewer
 
 
 Laravel is accessible, powerful, and provides tools required for large, robust applications.
@@ -32,3 +31,4 @@ Laravel is accessible, powerful, and provides tools required for large, robust a
 ## Potential Packages:
 - **[Laravel-medialibrary](https://spatie.be/docs/laravel-medialibrary/v10/introduction)**
 
+- Potential Code Generator: https://crestapps.com/laravel-code-generator/
